@@ -1,0 +1,65 @@
+## Ignore build outputs
+bin/
+obj/
+out/
+
+## User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider IDE
+.idea/
+
+## Visual Studio Code
+.vscode/
+
+## Visual Studio temporary files
+*.tmp
+*.log
+*.vs/
+.vsconfig
+
+## NuGet packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## DotCover
+*.dotCover
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Entity Framework
+*.edmx.sql
+*.dbmdl
+*.bak
+*.mdf
+*.ldf
+
+## Publish output
+*.publish.xml
+*.azurePubxml
+*.pubxml.user
+
+## Rider project files
+.idea/
+*.sln.iml
+
+## Local secrets
+appsettings.Local.json
+secrets.json
+
+## OS generated files
+.DS_Store
+Thumbs.db
