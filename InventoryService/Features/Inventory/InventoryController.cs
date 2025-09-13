@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using InventoryService.Features.Inventory.Commands.AddProductStock;
 using InventoryService.Features.Inventory.Commands.CreateProduct;
+using InventoryService.Features.Inventory.Commands.UpdateProduct;
 using InventoryService.Features.Inventory.Queries.GetStock;
 using InventoryService.Features.Inventory.Queries.GetStockHistory;
 using MediatR;
@@ -47,6 +48,14 @@ namespace InventoryService.Features.Inventory
         {
             var stockHistory = await _mediator.Send(new GetStockHistoryQuery { });
             return Ok(stockHistory);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] UpdateProductCommand command)
+        {
+            command.Id = id;
+            var productId = await _mediator.Send(command);
+            return Ok(productId);
         }
 
         [HttpPut("{id}/restock")]
