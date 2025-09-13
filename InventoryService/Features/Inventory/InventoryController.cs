@@ -59,13 +59,10 @@ namespace InventoryService.Features.Inventory
         }
 
         [HttpPut("{id}/restock")]
-        public async Task<IActionResult> RestockProduct(Guid id, [FromBody] int quantityToAdd)
+        public async Task<IActionResult> RestockProduct(Guid id, [FromBody] AddProductStockCommand command)
         {
-            await _mediator.Send(new AddProductStockCommand
-            {
-                ProductId = id,
-                QuantityToAdd = quantityToAdd
-            });
+            command.ProductId = id;
+            await _mediator.Send(command);
             return NoContent();
         }
     }
